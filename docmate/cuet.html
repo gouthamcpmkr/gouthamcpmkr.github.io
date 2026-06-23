@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Format all your CUET exam documents with just one click. Compress and format pdfs' and photos locally.">
+    <title>DocMate – Format Your CUET Documents Easily</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/pack.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="pics/logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="pics/logo.png" alt="DocMate Logo" class="logo-img">
+                <span class="logo-text">DocMate</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#menu" class="nav-link">Packs</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PACK Section -->
+    <section class="pack-section" id="pack" pack="cuet">
+        <div class="container">
+            <div class="pack-section-header">
+                <h1 id="title" class="pack-section-title">CUET Exam Documents Formatter</h1>
+                <p id="subtitle" class="pack-section-subtitle">Choose your required documents and click "CONVERT ALL" button below. All compression and formatting is executed locally inside your browser, ensuring 100% privacy and security.</p>
+            </div>
+
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="pack-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px; text-align: center;">SL. NO</th>
+                                <th style="width: 180px;">Document</th>
+                                <th>Instructions</th>
+                                <th style="width: 280px;">File Chosen</th>
+                                <th style="width: 200px;">Output</th>
+                                <th style="width: 180px; text-align: center;">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablebody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="end-panel">
+                <div class="info">
+                    <p>By proceeding, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+                <div class="convertbtn">
+                    <button id="btn-convert" class="btn-convert">CONVERT ALL</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="pics/logo.png" alt="DocMate" class="footer-logo">
+                    <p class="footer-tagline">Fast. Accurate. Private.</p>
+                    <p class="footer-description">Your documents, your device. Secure, target-size compression for
+                        error-free submissions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#menu">Packs</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="tnc.html#tnc">Terms and Conditions</a></li>
+                        <li><a href="tnc.html#privacypolicy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Write to Us</h4>
+                    <form id="contactForm" class="contact-form">
+                        <input type="email" id="userEmail" placeholder="Your Email" required>
+                        <textarea id="userMessage" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                    <script>
+                        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const response = await fetch('/api/send', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email: document.getElementById('userEmail').value,
+                                    message: document.getElementById('userMessage').value
+                                })
+                            });
+                            if (response.ok) alert('Message sent securely!');
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DocMate. All rights reserved.</p>
+                <p>Built with ❤️ by a lazy NITian</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="scripts/pack.js"></script>
+    <!-- Interactive Client-side Scripting -->
+
+</body>
+
+</html>

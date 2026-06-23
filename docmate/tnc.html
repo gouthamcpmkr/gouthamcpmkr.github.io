@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DocMate is the most popular exam document formatter in India. Format all your exam documents with just one click. No sign up required.">
+    <title>DocMate – Best Exam Document Formatter in India</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/tncpp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="pics/logo.png" type="image/png">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#menu" class="logo">
+                <img src="pics/logo.png" alt="DocMate Logo" class="logo-img">
+                <span class="logo-text">DocMate</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#menu" class="nav-link active">Packs</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tnc" id="tnc">
+        <div class="container">
+            <div class="tncpp-section-header">
+                <h2 class="tncpp-section-title">Terms and Conditions</h2>
+                <p><i>"By using this website, you acknowledge and agree to the following terms and conditions of use."</i></p>
+            </div>
+            <div class="tnc-content">
+                <div class="tnc-image">
+                    <img class="hide-mobile" src="pics/tnc.png" alt="DocMate Terms and Conditions" loading="lazy">
+                </div>
+                <div class="tnc-text">
+                    <h5>Scope of Service:</h5>
+                    <p>This website provides local, client-side automated file compression and image format 
+                        conversion to specified formats based on exam-defined constraints.  
+                    </p>
+                    <h5>User Affirmation & Verification:</h5>
+                    <p>You bear sole responsibility for reading, verifying, and understanding the official 
+                        notification guidelines of your target application portal. You must ensure that 
+                        the output parameters selected on this platform perfectly match the required criteria.
+                    </p>
+                    <h5>Limitation of Liability:</h5>
+                    <p>This platform is a mechanical optimization utility. We do not submit applications 
+                        on your behalf, nor do we validate the legal correctness of your input files. 
+                        We are not liable for missed deadlines, rejected submissions, or technical failures 
+                        on external application portal servers. 
+                    </p>
+                    <h5>100% User Accountable:</h5>
+                    <p>You are fully responsible for ensuring your files are correct, compliant, and 
+                        successfully submitted to the respective official portal on time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="privacypolicy" id="privacypolicy">
+        <div class="container">
+            <div class="privacypolicy-section-header">
+                <h2 class="section-title">Privacy Policy</h2>
+                <p><i>"We do not collect or store any personal information from users of this website."</i></p>
+            </div>
+            <div class="privacypolicy-content">
+                <div class="privacypolicy-text">
+                    <h5>Zero Data Collection:</h5>
+                    <p>We operate under a strict zero-data-retention model. We do not harvest, track, 
+                        log, or store your personal identifiers, names, email addresses, or document 
+                        details.
+                    </p>
+                    <h5>100% Client-Side Processing:</h5>
+                    <p>All conversion and target-size compression algorithms are executed entirely within 
+                        your local web browser. Your passport photographs, certificates, and PDFs never 
+                        leave your machine and are never uploaded to our servers.
+                    </p>
+                    <h5>No Third-Party Analytics:</h5>
+                    <p>No third-party analytical trackers are deployed that process your private application 
+                        materials.
+                    </p>
+                    <h5>Zero Risk:</h5>
+                    <p>Your sensitive data remains completely confined to your own hardware environment 
+                        throughout the session.
+                    </p>
+                </div>
+                <div class="privacypolicy-image">
+                    <img class="hide-mobile" src="pics/pp.jpg" alt="DocMate Help" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="pics/logo.png" alt="DocMate" class="footer-logo">
+                    <p class="footer-tagline">Fast. Accurate. Private.</p>
+                    <p class="footer-description">Your documents, your device. Secure, target-size compression for error-free submissions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#menu">Packs</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#tnc">Terms and Conditions</a></li>
+                        <li><a href="#privacypolicy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Write to Us</h4>
+                    <form id="contactForm" class="contact-form">  
+                        <input type="email" id="userEmail" placeholder="Your Email" required>  
+                        <textarea id="userMessage" placeholder="Your Message" required></textarea>  
+                        <button type="submit">Send</button>
+                    </form>
+                    <script>  
+                        document.getElementById('contactForm').addEventListener('submit', async (e) => {    
+                            e.preventDefault();    
+                            const response = await fetch('/api/send', {
+                                method: 'POST', 
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email: document.getElementById('userEmail').value,
+                                    message: document.getElementById('userMessage').value})
+                                });
+                            if (response.ok) alert('Message sent securely!');  
+                            });
+                    </script>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DocMate. All rights reserved.</p>
+                <p>Built with ❤️ by a lazy NITian</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

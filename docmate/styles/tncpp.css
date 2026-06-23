@@ -1,0 +1,203 @@
+
+/* ============================================
+   T&C SECTION
+   ============================================ */
+.tnc {
+    background-color: var(--off-white);
+}
+
+.tncpp-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tncpp-section-title {
+    font-size: 2.45rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.tnc-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tnc-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.tnc-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 3px solid var(--royal-blue);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.tnc-image img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.tnc-image:hover img {
+    transform: scale(1.03);
+}
+
+.tnc-text h3, h4{
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.tnc-text > p {
+    font-size: 1.0625rem;
+    color: var(--medium-gray);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+
+/* ============================================
+   PRIVACY POLICY SECTION
+   ============================================ */
+
+.privacypolicy {
+    background-color: var(--white);
+    padding-top: 1rem;
+}
+
+.privacypolicy-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.privacypolicy-section-title {
+    font-size: 2.45rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.privacypolicy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.privacypolicy-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.privacypolicy-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 3px solid var(--royal-blue);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.privacypolicy-image img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.privacypolicy-image:hover img {
+    transform: scale(1.03);
+}
+
+.privacypolicy-text h3, h4{
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.privacypolicy-text > p {
+    font-size: 1.0625rem;
+    color: var(--medium-gray);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   T&C SECTION AND PRIVACY POLICY
+   ============================================ */
+
+.tnc h2,
+.privacypolicy h2 {
+    font-size: 2.45rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-top: 2.5rem;
+    margin-bottom: 24px;
+}
+.tnc h5,
+.privacypolicy h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+.tnc p,
+.privacypolicy p {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .tnc-content,
+    .privacypolicy-content {
+        grid-template-columns: 1fr;
+    }
+    .tnc {
+        padding-top: 5rem;
+        padding-bottom: 0rem;
+    }
+    .privacypolicy {
+        padding: 0 0;
+    }
+    
+    .tnc-image img,
+    .privacypolicy-image img {
+        height: auto;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .tnc-image {
+        order: 2;
+    }
+    .privacypolicy-image {
+        order: 1;
+    }
+}
